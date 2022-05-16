@@ -100,4 +100,4 @@ This app required node js environment to run, therefore we need to have node js 
 
 Developer Name - Shehan Abeyrathne
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/shehan96/currency-converter](https://github.com/shehan96/currency-converter)
