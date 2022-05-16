@@ -3,7 +3,7 @@
   <h3 align="center">Currency Convertor App</h3>
 
   <p align="center">
-  This is a currency convertor app, made using open APIs with free licences. This project contains two parts. First we have backend GraphQL server made with Node.js and secondly we have frontend made with React.js. Main usage of the app is you can convert amount in SEK to local currency.
+  This is a currency convertor app, made using open APIs with free licences.
   </p>
 </div>
 
@@ -11,9 +11,9 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Product Name Screen Shot](https://i.postimg.cc/ydR9fq28/Screenshot-2022-05-16-at-17-47-44.png)
 
-kfjdfjkljlsf
+This is a currency convertor app, made using open APIs with free licences. This project contains two parts. First we have backend GraphQL server made with Node.js and secondly we have frontend made with React.js. Main usage of the app is you can convert amount in SEK to local currency.
 
 ### Built With
 
@@ -50,6 +50,7 @@ This app required node js environment to run, therefore we need to have node js 
 - Backend installation
 
 2. Navigate inside the server folder
+
    ```sh
    cd server
    ```
@@ -77,7 +78,8 @@ This app required node js environment to run, therefore we need to have node js 
    ```sh
    npm start
    ```
-<!-- ROADMAP & TASK TIME BREAKDOWN -->
+   <!-- ROADMAP & TASK TIME BREAKDOWN -->
+
 ## Roadmap & Task Time Breakdown
 
 - [x] Backend Server
@@ -96,7 +98,7 @@ This app required node js environment to run, therefore we need to have node js 
 
 <!-- DEVELOPER -->
 
-## Developer & Project Link 
+## Developer & Project Link
 
 Developer Name - Shehan Abeyrathne
 
