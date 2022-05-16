@@ -1,0 +1,22 @@
+.LoginBackgraound {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #eef7ff;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 32px 64px;
+    width: 600px;
+    border: 1px solid #dddfe1 !important;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.25rem;
+}

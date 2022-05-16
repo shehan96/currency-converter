@@ -1,0 +1,22 @@
+.Search {
+    position: relative;
+
+    .SearchSpinner {
+        position: absolute;
+        z-index: 1;
+        top: 11px;
+        left: 11px;
+    }
+
+    .SearchIcon {
+        position: absolute;
+        z-index: 1;
+        top: 11px;
+        left: 11px;
+    }
+
+    :global(.ant-select-selection-search-input),
+    :global(.ant-select-selection-placeholder) {
+        padding-left: 26px !important; 
+    }
+}
