@@ -28,8 +28,7 @@ This project is build using following technologies.
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Use following instructions to run the project. Please make sure to have prerequisites before installation.
 
 ### Prerequisites
 
