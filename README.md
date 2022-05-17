@@ -3,7 +3,7 @@
   <h3 align="center">Currency Convertor App</h3>
 
   <p align="center">
-  This is a currency convertor app, made using open APIs with free licences.
+  This is a currency converter app, which users can search for countries and enter an amount in SEK to be converted into local currencies of selected countries. This project was made using open APIs with free licenses.
   </p>
 </div>
 
@@ -13,13 +13,14 @@
 
 ![Product Name Screen Shot](https://i.postimg.cc/ydR9fq28/Screenshot-2022-05-16-at-17-47-44.png)
 
-This is a currency convertor app, made using open APIs with free licences. This project contains two parts. First we have backend GraphQL server made with Node.js and secondly we have frontend made with React.js. Main usage of the app is you can convert amount in SEK to local currency.
+This project contains two parts. First we have a backend GraphQL server made with Node.js and secondly we have a frontend made with React.js. Main usage of the app is that you can convert the amount in SEK to local currency.
 
 ### Built With
 
-This project is build using following technologies.
+This project is built using the following technologies.
 
 - [Node.js](https://nodejs.org/en/)
+- [Express.js](https://expressjs.com)
 - [React.js](https://reactjs.org/)
 - [GraphQL](https://graphql.org/)
 - [Ant Design](https://ant.design/)
@@ -32,7 +33,7 @@ Use following instructions to run the project. Please make sure to have prerequi
 
 ### Prerequisites
 
-This app required node js environment to run, therefore we need to have node js installed in our environment.
+This app requires a node js environment to run, therefore we need to have node js installed in our environment.
 
 - npm
   ```sh
@@ -48,7 +49,7 @@ This app required node js environment to run, therefore we need to have node js 
 
 - Backend installation
 
-2. Navigate inside the server folder
+2. Navigate inside to the server folder
 
    ```sh
    cd server
@@ -65,7 +66,7 @@ This app required node js environment to run, therefore we need to have node js 
 
 - Frontend installation
 
-5. Navigate inside the client folder
+5. Navigate inside to the client folder
    ```sh
    cd server
    ```
@@ -77,29 +78,39 @@ This app required node js environment to run, therefore we need to have node js 
    ```sh
    npm start
    ```
+
 - Visit http://localhost:5000/graphql to access the backend server
 - Visit http://localhost:3000 to access the frontend client
+
+## User Credentials
+In this project, backend dosen't store any data related to user. Therefore hardcoded email and password is use as user credentials and used to authentication. 
+
+Please use following user credentials to generate JWT token.
+
+- Email : test@gmail.com
+- Password : test123
+
 <!-- ROADMAP & TASK TIME BREAKDOWN -->
 ## Roadmap & Task Time Breakdown
 
 - [x] Backend Server
-  - [x] Project setup & structure planing - 1Hr
+  - [x] Project setup & structure planning - 1Hr
   - [x] TypeDefs, Queries & Mutations - 3Hr
-  - [x] Authentication middleware - 1Hr
-  - [x] Rate limitter setup - 0.5Hr
-  - [x] Testing & finishing - 1Hr
+  - [x] Authentication Middleware - 1Hr
+  - [x] Rate limiter setup - 0.5Hr
+  - [x] Testing & Finishing - 1Hr
 - [x] Frontend Client
-  - [x] Project setup & structure planing - 1Hr
-  - [x] Home & login page setup - 3Hr
-  - [x] Components creating - 3Hr
-  - [x] GraphQL client setup - 1Hr
-  - [x] Custom hooks creating - 1Hr
+  - [x] Project setup & structure planning - 1Hr
+  - [x] Home & Login Page Setup - 3Hr
+  - [x] Components Creating - 3Hr
+  - [x] GraphQL Client Setup - 1Hr
+  - [x] Custom Hooks Creating - 1Hr
   - [x] Styling & Testing - 1Hr
 
 <!-- DEVELOPER -->
 
 ## Developer & Project Link
 
-Developer Name - Shehan Abeyrathne
+Developer Name : Shehan Abeyrathne
 
-Project Link: [https://github.com/shehan96/currency-converter](https://github.com/shehan96/currency-converter)
+Project Link : [https://github.com/shehan96/currency-converter](https://github.com/shehan96/currency-converter)
