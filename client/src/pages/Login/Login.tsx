@@ -1,5 +1,5 @@
-import { Form, Input, Button } from 'antd';
-import { useContext, useEffect, useState } from 'react';
+import { Form, Input, Button, message } from 'antd';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFirstRender } from '../../hooks/useFirstRender';
 import { useLogin } from '../../hooks/useLogin';
@@ -18,7 +18,7 @@ export const Login = () => {
       email: emailPasswordCredentials.email,
       password: emailPasswordCredentials.password,
     });
-  
+
   useEffect(() => {
     if (!firstRender) {
       runLoginMutation()
@@ -27,8 +27,8 @@ export const Login = () => {
           localStorage.setItem('token', token);
           navigate('/', { replace: true });
         })
-        .catch((e) => {
-          console.log(JSON.stringify(e, null, 2));
+        .catch((error) => {
+          message.error(JSON.stringify(error.message, null, 2) + '\nPlease try again');
         });
     }
   }, [emailPasswordCredentials]);
@@ -38,7 +38,7 @@ export const Login = () => {
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
+    message.error(errorInfo.errorFields[0].errors[0]);
   };
 
   return (
