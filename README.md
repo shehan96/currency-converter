@@ -111,7 +111,7 @@ Please use following user credentials to generate a JWT token.
 
 <!-- Future Improvements & Implementations-->
 
-## FUTURE IMPROVEMENTS & IMPLEMETATIONS
+## Future Improvements & Implementations
 
 Here I have mentioned some future improvements & implementations which I think makes this app a better one.
 
