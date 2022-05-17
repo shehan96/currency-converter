@@ -1,26 +1,26 @@
 import { axiosCurrency } from '../Axios/AxiosCurrency';
+import { BASE_CURRENCY } from '../Constants/Constants';
 
 export const GetCurrencyByCode = async (parent, args, context, info) => {
   if (!context.isAuthenticated) {
     throw new Error('Unauthenticated');
   }
 
-  let currencyCode = parent.currency_code;
+  let currencyCodes: string = parent.currency_codes.join();
 
   let result = await axiosCurrency.get('latest', {
     params: {
-      base: currencyCode,
-      symbols: 'SEK',
+      base: BASE_CURRENCY,
+      symbols: currencyCodes,
     },
     headers: {
       apikey: '' + process.env.FIXER_API_KEY,
     },
   });
 
-  let currency = {
-    code: currencyCode,
-    exchange_rate_to_sek: result.data.rates['SEK'],
-  };
+  let currencies = Object.keys(result.data.rates).map((key) => {
+    return { code: key, exchange_rate: result.data.rates[key] };
+  });
 
-  return currency;
+  return currencies;
 };
