@@ -1,11 +1,11 @@
+import { Currency } from './Currency.model';
+
 export class Country {
-  population: number;
-  official_name: string;
   common_name: string;
+  official_name: string;
   flag: string;
-  currency_code: string;
+  population: number;
+  currency_codes: string[];
   amount_in_sek: number;
-  currency: {
-    exchange_rate_to_sek: number;
-  };
+  currencies: Currency[];
 }
