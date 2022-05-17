@@ -17,12 +17,12 @@ export const GetCountryByName = async (parent, args, context, info) => {
 
   let { name, population, currencies, flags } = result.data[0];
 
-  let currency_code, currency_name, currency_symbol;
+  let currencyArray = Object.keys(currencies).map((key) => [key, currencies[key]]);
 
-  for (var key in currencies) {
-    currency_code = key;
-    currency_name = currencies[key].name;
-    currency_symbol = currencies[key].symbol;
+  let currency_codes: string[] = [];
+
+  for (var i = 0; i < currencyArray.length; i++) {
+    currency_codes.push(currencyArray[i][0]);
   }
 
   let country = {
@@ -30,7 +30,7 @@ export const GetCountryByName = async (parent, args, context, info) => {
     official_name: name.official,
     flag: flags.svg,
     population: population,
-    currency_code: currency_code,
+    currency_codes: currency_codes,
   };
 
   return country;
