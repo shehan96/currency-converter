@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Search } from '../../components/Search/Search';
 import { NavBar } from '../../components/NavBar/NavBar';
-import { Col, Empty, Layout, Row, message } from 'antd';
+import { Col, Empty, Layout, Row, message, Alert } from 'antd';
 import { useFirstRender } from '../../hooks/useFirstRender';
 import classes from './Home.module.scss';
 import { ConvertForm } from '../../components/ConvertForm/ConvertForm';
 import { useGetCountry } from '../../hooks/useGetCountry';
 import { Country } from '../../models/Country.model';
 import { CountryDisplay } from '../../components/CountryDisplay/CountryDisplay';
+import { LoadingOutlined } from '@ant-design/icons';
 const { Content } = Layout;
 
 export const Home = () => {
@@ -104,6 +105,21 @@ export const Home = () => {
     );
   };
 
+  const renderCountryLoadingMessage = () => {
+    return (
+      <Row className={classes.AlignItems}>
+        <Col className={classes.MarginTop} md={{ span: 6 }}>
+          <Alert
+            icon={<LoadingOutlined />}
+            showIcon
+            message='Country data is loading'
+            type='info'
+          />
+        </Col>
+      </Row>
+    );
+  };
+
   return (
     <>
       <NavBar />
@@ -122,6 +138,7 @@ export const Home = () => {
                 />
               </Col>
             </Row>
+            {countryLoading ? renderCountryLoadingMessage() : null}
             {countryList.length == 0 ? renderEmptyMessage() : renderCountrList()}
           </div>
         </Content>
