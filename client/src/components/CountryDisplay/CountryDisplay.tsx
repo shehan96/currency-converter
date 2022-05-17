@@ -3,20 +3,15 @@ import { TeamOutlined } from '@ant-design/icons';
 import { BASE_CURRENCY } from '../../constants/Constants';
 import classes from './CountryDisplay.module.scss';
 import { Currency } from '../../models/Currency.model';
+import { CurrencyConvertor } from '../../utils/CurrencyConvertor';
 
 export const CountryDisplay = (props: any) => {
-  const [sekCurrencyValue, setLocalCurrencyValue] = useState(1);
+  const [baseCurrencyValue, setBaseCurrencyValue] = useState(1);
 
-  const currencyConvertor = (exchangeRate?: string) => {
-    var amount: number = +props.amountInSek;
-    var rate: number = exchangeRate == undefined ? 0 : +exchangeRate;
-    if (amount == 0 || amount == null || amount == undefined) {
-      return 0;
-    } else {
-      return (amount * rate).toFixed(2);
-    }
-  };
-
+  /**
+   * Get currency related values as currency object using currency array
+   * @params currencies, currencyCode
+   * */
   const getCurrencyRelatedValues = (currencies: Currency[], currencyCode: string) => {
     var currencyObject = currencies.find((object) => {
       return object.code === currencyCode;
@@ -44,7 +39,7 @@ export const CountryDisplay = (props: any) => {
             </thead>
             <tbody>
               <tr>
-                <td>{sekCurrencyValue}</td>
+                <td>{baseCurrencyValue}</td>
                 <td>
                   {getCurrencyRelatedValues(
                     props.currencies,
@@ -65,7 +60,8 @@ export const CountryDisplay = (props: any) => {
             <tbody>
               <tr>
                 <td>
-                  {currencyConvertor(
+                  {CurrencyConvertor(
+                    props.amountInSek,
                     getCurrencyRelatedValues(props.currencies, localCurrencyCode)
                       ?.exchange_rate.toFixed(2)
                       .toString()

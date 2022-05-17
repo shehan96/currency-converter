@@ -1,6 +1,10 @@
 import { useLazyQuery } from '@apollo/client';
 import { GET_COUNTRY_QUERY } from '../graphql/Query';
 
+/**
+ * useGetCountry hook
+ * Get data using GET_COUNTRY_QUERY from graphql server
+ * */
 export const useGetCountry = (countryName: string) => {
   const [getData, { loading, data, error }] = useLazyQuery(GET_COUNTRY_QUERY, {
     variables: { searchCountry : countryName },

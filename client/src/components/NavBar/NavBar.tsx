@@ -5,6 +5,10 @@ const { Header } = Layout;
 export const NavBar = () => {
   const navigate = useNavigate();
 
+  /**
+   * Function to handle navigation between home page and login page
+   * @params value : Object pass by onClick method of the Menu element
+   * */
   const navigateToLoginPage = (value: any) => {
     if (value.key === 'home') {
       navigate('/', { replace: true });
