@@ -83,14 +83,16 @@ This app requires a node js environment to run, therefore we need to have node j
 - Visit http://localhost:3000 to access the frontend client
 
 ## User Credentials
-In this project, backend dosen't store any data related to user. Therefore hardcoded email and password is use as user credentials and used to authentication. 
 
-Please use following user credentials to generate JWT token.
+In this project, the backend does not store any data related to the user. Therefore hardcoded email and password is used as user credentials and used for authentication.
+
+Please use following user credentials to generate a JWT token.
 
 - Email : test@gmail.com
 - Password : test123
 
 <!-- ROADMAP & TASK TIME BREAKDOWN -->
+
 ## Roadmap & Task Time Breakdown
 
 - [x] Backend Server
@@ -106,6 +108,18 @@ Please use following user credentials to generate JWT token.
   - [x] GraphQL Client Setup - 1Hr
   - [x] Custom Hooks Creating - 1Hr
   - [x] Styling & Testing - 1Hr
+
+<!-- Future Improvements & Implementations-->
+
+## FUTURE IMPROVEMENTS & IMPLEMETATIONS
+
+Here I have mentioned some future improvements & implementations which I think makes this app a better one.
+
+- Make improvements for the authentication system by saving user related data in a database without using hardcoded user credentials.
+- Allow users to access most popular countries without having a token. Users can use the system up to some limit without authenticating.
+- Add error handling functions with more user friendly messages and data.
+- Add a function to check exchange rate in real time or add a function to clear data if fetched data is much older.
+- Add a function to remove fetched country data from the frontend, if the user wants to.
 
 <!-- DEVELOPER -->
 
