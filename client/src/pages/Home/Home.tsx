@@ -8,7 +8,7 @@ import { ConvertForm } from '../../components/ConvertForm/ConvertForm';
 import { useGetCountry } from '../../hooks/useGetCountry';
 import { Country } from '../../models/Country.model';
 import { CountryDisplay } from '../../components/CountryDisplay/CountryDisplay';
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 export const Home = () => {
   const [countryText, setCountryText] = useState('');
@@ -41,18 +41,20 @@ export const Home = () => {
             setCountryList((countryList) => [...countryList, result.data.GetCountryDetails]);
           })
           .catch((error) => {
-            message.error(JSON.stringify(error.message, null, 2) + '\nPlease visit login page to generate new token');
-            console.log(JSON.stringify(error.message, null, 2));
+            message.error(
+              JSON.stringify(error.message, null, 2) +
+                '\nPlease visit login page to generate new token'
+            );
+            // console.log(JSON.stringify(error.message, null, 2));
           });
       } else {
-        console.log('This country exists!!');
+        message.warning('This country already exists!!');
       }
     }
   }, [countryText]);
 
   useEffect(() => {
     let tempCountryArray: Country[] = countryList;
-    console.log('Temp Country Array', tempCountryArray);
     if (currencyValue.toString() == '') {
     } else {
       tempCountryArray.forEach((country) => {
@@ -61,20 +63,15 @@ export const Home = () => {
           population: country.population,
           official_name: country.official_name,
           flag: country.flag,
-          currency_code: country.currency_code,
+          currency_codes: country.currency_codes,
           amount_in_sek: currencyValue,
-          currency: country.currency,
+          currencies: country.currencies,
         };
         setCountryList(countryList.filter((item) => item.common_name !== tempCountry.common_name));
         setCountryList((countryList) => [...countryList, tempCountry]);
       });
-      console.log('New country list', countryList);
     }
   }, [currencyValue]);
-
-  useEffect(() => {
-    console.log(countryList);
-  }, [countryList]);
 
   const renderCountrList = () => {
     return (
@@ -86,9 +83,9 @@ export const Home = () => {
               officialName={country.official_name}
               population={country.population}
               flag={country.flag}
-              currencyCode={country.currency_code}
+              currencyCodes={country.currency_codes}
               amountInSek={currencyValue}
-              exchangeRateToSek={country.currency.exchange_rate_to_sek}
+              currencies={country.currencies}
             />
           </Col>
         ))}
