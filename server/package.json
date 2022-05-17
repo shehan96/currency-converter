@@ -2,11 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "GraphQL Backend Server",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "build": "tsc -p",
-    "start": "node ./dist/index.js",
-    "test": "nodemon ./src/index.ts"
+    "start": "nodemon ./src/index.ts"
   },
   "keywords": [
     "Server",
