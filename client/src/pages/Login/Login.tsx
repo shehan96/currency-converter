@@ -33,10 +33,16 @@ export const Login = () => {
     }
   }, [emailPasswordCredentials]);
 
+  /**
+   * Set email password credentials after successful form submission
+   * */
   const useOnFinish = (values: any) => {
     setemailPasswordCredentials({ email: values.email, password: values.password });
   };
 
+  /**
+   * Display error message after unsuccessful form submission
+   * */
   const onFinishFailed = (errorInfo: any) => {
     message.error(errorInfo.errorFields[0].errors[0]);
   };
