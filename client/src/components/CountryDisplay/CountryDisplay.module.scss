@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 325px;
-  max-height: 325px;
+  height: 100%;
   box-shadow: 1px 1px 1px 1px #eee;
   padding: 16px 0px;
   margin: 16px 8px;
@@ -21,6 +20,7 @@
 .CurrencyContainer {
   width: 75%;
   text-align: center;
+  margin-bottom: 8px;
 
   th,
   td {
@@ -51,8 +51,4 @@
   font-size: 16px;
   font-weight: 300;
   color: #757575;
-}
-
-.divHeight{
-    margin: 8px;
 }
