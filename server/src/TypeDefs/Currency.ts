@@ -2,11 +2,9 @@ import { GraphQLFloat, GraphQLNonNull, GraphQLObjectType, GraphQLString } from '
 
 export const CurrencyType = new GraphQLObjectType({
   name: 'CurrencyType',
-  description: 'This represent currency type',
+  description: 'This object represent currency type',
   fields: () => ({
     code: { type: new GraphQLNonNull(GraphQLString) },
-    name: { type: new GraphQLNonNull(GraphQLString) },
-    symbol: { type: new GraphQLNonNull(GraphQLString) },
-    exchange_rate_to_sek: { type: new GraphQLNonNull(GraphQLFloat) },
+    exchange_rate: { type: new GraphQLNonNull(GraphQLFloat) },
   }),
 });
