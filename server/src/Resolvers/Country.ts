@@ -1,5 +1,9 @@
 import { axiosCountries } from '../Axios/AxiosCountries';
 
+/**
+ * Takes arguments from the query and fetch country related data from rest countries api
+ * @params parent, args, context, info
+ * */
 export const GetCountryByName = async (parent, args, context, info) => {
   if (!context.isAuthenticated) {
     throw new Error('Unauthenticated');
@@ -36,6 +40,10 @@ export const GetCountryByName = async (parent, args, context, info) => {
   return country;
 };
 
+/**
+ * Takes arguments from the query and fetch country name related data from rest countries api
+ * @params parent, args, context, info
+ * */
 export const GetAllCountryNames = async (parent, args, context, info) => {
   let restEndPoint = 'all';
 

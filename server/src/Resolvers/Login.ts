@@ -1,5 +1,9 @@
 import jwt from 'jsonwebtoken';
 
+/**
+ * Takes arguments from the login mutation and authenticated the user
+ * @params parent, args, context, info
+ * */
 export const UserAuthentication = (parent, args, context, info) => {
   let { email, password } = args;
 

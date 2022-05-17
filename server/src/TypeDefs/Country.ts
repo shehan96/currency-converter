@@ -2,6 +2,9 @@ import { CurrencyType } from './Currency';
 import { GraphQLInt, GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
 import { GetCurrencyByCode } from '../Resolvers/Currency';
 
+/**
+ * This graphql object represnt country data type
+ * */
 export const CountryType = new GraphQLObjectType({
   name: 'CountryType',
   description: 'This object represent country type',
@@ -21,6 +24,9 @@ export const CountryType = new GraphQLObjectType({
   }),
 });
 
+/**
+ * This graphql object represnt country name data type
+ * */
 export const CountryNameType = new GraphQLObjectType({
   name: 'CountryNameType',
   description: 'This object represent country name type',

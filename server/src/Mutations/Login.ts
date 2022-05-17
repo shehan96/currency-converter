@@ -2,6 +2,10 @@ import { GraphQLString } from 'graphql';
 import { UserAuthentication } from '../Resolvers/Login';
 import { LoginType } from '../TypeDefs/Login';
 
+/**
+ * Login mutation to authenticate the user
+ * @args email : useremail, password : userpassword
+ * */
 export const Login = {
   type: LoginType,
   args: {

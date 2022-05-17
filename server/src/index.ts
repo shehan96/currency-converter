@@ -19,10 +19,19 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
+/**
+ * Use rate limmiter middleware
+ * */
 app.use(limiter);
 
+/**
+ * Use authentication middleware
+ * */
 app.use(Auth);
 
+/**
+ * Root query for the graphql
+ * */
 const rootQuery = new GraphQLObjectType({
   name: 'Query',
   fields: {
@@ -31,6 +40,9 @@ const rootQuery = new GraphQLObjectType({
   },
 });
 
+/**
+ * Root mutation for the graphql
+ * */
 const rootMutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
@@ -38,6 +50,9 @@ const rootMutation = new GraphQLObjectType({
   },
 });
 
+/**
+ * Schema for the graphql
+ * */
 const schema = new GraphQLSchema({
   description: 'This is main schema',
   query: rootQuery,
@@ -52,7 +67,7 @@ app.use(
   })
 );
 
-const port: number = 5000;
+const port: number = Number(process.env.PORT) || 5000;
 
 app.listen(port, () => {
   console.log('🚀 Server is running under port number 5000 🚀');

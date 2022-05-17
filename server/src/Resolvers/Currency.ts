@@ -1,6 +1,10 @@
 import { axiosCurrency } from '../Axios/AxiosCurrency';
 import { BASE_CURRENCY } from '../Constants/Constants';
 
+/**
+ * Takes arguments from the query and fetch currency related data from fixer api
+ * @params parent, args, context, info
+ * */
 export const GetCurrencyByCode = async (parent, args, context, info) => {
   if (!context.isAuthenticated) {
     throw new Error('Unauthenticated');

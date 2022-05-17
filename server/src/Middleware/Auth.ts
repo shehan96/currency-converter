@@ -1,5 +1,9 @@
 import jwt from 'jsonwebtoken';
 
+/**
+ * Express middleware to authenticate the user request using authorization header
+ * @params req : request, res: responce, next : middleware
+ * */
 export const Auth = (req, res, next) => {
   let accessToken = req.headers['authorization'];
   

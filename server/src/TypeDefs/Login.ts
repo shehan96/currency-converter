@@ -1,5 +1,8 @@
 import { GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
 
+/**
+ * This graphql object represnt login data type
+ * */
 export const LoginType = new GraphQLObjectType({
   name: 'LoginType',
   description: 'This represent login type',
