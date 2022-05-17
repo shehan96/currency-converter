@@ -19,7 +19,7 @@ export const UserAuthentication = (parent, args, context, info) => {
 
   try {
     token = jwt.sign({ email: email }, '' + process.env.JWT_SECRET, {
-      expiresIn: '1h',
+      expiresIn: process.env.JWT_EXPIRES_IN,
     });
   } catch (error) {
     throw new Error('' + error);
