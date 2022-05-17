@@ -22,7 +22,7 @@ This project is build using following technologies.
 - [Node.js](https://nodejs.org/en/)
 - [React.js](https://reactjs.org/)
 - [GraphQL](https://graphql.org/)
-- [Ant DEsign](https://ant.design/)
+- [Ant Design](https://ant.design/)
 
 <!-- GETTING STARTED -->
 
@@ -43,7 +43,7 @@ This app required node js environment to run, therefore we need to have node js 
 
 1. Clone the git repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/shehan96/currency-converter.git
    ```
 
 - Backend installation
@@ -77,8 +77,9 @@ This app required node js environment to run, therefore we need to have node js 
    ```sh
    npm start
    ```
-   <!-- ROADMAP & TASK TIME BREAKDOWN -->
-
+- Visit http://localhost:5000/graphql to access the backend server
+- Visit http://localhost:3000 to access the frontend client
+<!-- ROADMAP & TASK TIME BREAKDOWN -->
 ## Roadmap & Task Time Breakdown
 
 - [x] Backend Server
