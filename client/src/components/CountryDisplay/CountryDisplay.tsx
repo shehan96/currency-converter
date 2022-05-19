@@ -5,7 +5,25 @@ import classes from './CountryDisplay.module.scss';
 import { Currency } from '../../models/Currency.model';
 import { CurrencyConvertor } from '../../utils/CurrencyConvertor';
 
-export const CountryDisplay = (props: any) => {
+type CountryDisplayProps = {
+  flag: string;
+  commonName: string;
+  officialName: string;
+  population: number;
+  currencies: Currency[];
+  amountInSek: number;
+  currencyCodes: string[];
+};
+
+export const CountryDisplay = ({
+  flag,
+  commonName,
+  officialName,
+  population,
+  currencies,
+  amountInSek,
+  currencyCodes,
+}: CountryDisplayProps) => {
   const [baseCurrencyValue, setBaseCurrencyValue] = useState(1);
 
   /**
@@ -22,14 +40,14 @@ export const CountryDisplay = (props: any) => {
   return (
     <>
       <div className={classes.CountryDisplayContainer}>
-        <img className={classes.CountryFlag} src={props.flag} />
-        <h1 className={classes.CommonName}>{props.commonName}</h1>
-        <span className={classes.OfficialName}>{props.officialName}</span>
+        <img className={classes.CountryFlag} src={flag} />
+        <h1 className={classes.CommonName}>{commonName}</h1>
+        <span className={classes.OfficialName}>{officialName}</span>
         <h3 className={classes.Population}>
           <TeamOutlined />
-          <span>{props.population}</span>
+          <span>{population}</span>
         </h3>
-        {props.currencyCodes.map((localCurrencyCode: string) => (
+        {currencyCodes.map((localCurrencyCode: string) => (
           <table key={localCurrencyCode} className={classes.CurrencyContainer}>
             <thead>
               <tr>
@@ -41,16 +59,15 @@ export const CountryDisplay = (props: any) => {
               <tr>
                 <td>{baseCurrencyValue}</td>
                 <td>
-                  {getCurrencyRelatedValues(
-                    props.currencies,
-                    localCurrencyCode
-                  )?.exchange_rate.toFixed(2)}
+                  {getCurrencyRelatedValues(currencies, localCurrencyCode)?.exchange_rate.toFixed(
+                    2
+                  )}
                 </td>
               </tr>
             </tbody>
           </table>
         ))}
-        {props.currencyCodes.map((localCurrencyCode: string) => (
+        {currencyCodes.map((localCurrencyCode: string) => (
           <table key={localCurrencyCode} className={classes.CurrencyContainer}>
             <thead>
               <tr>
@@ -61,8 +78,8 @@ export const CountryDisplay = (props: any) => {
               <tr>
                 <td>
                   {CurrencyConvertor(
-                    props.amountInSek,
-                    getCurrencyRelatedValues(props.currencies, localCurrencyCode)
+                    amountInSek,
+                    getCurrencyRelatedValues(currencies, localCurrencyCode)
                       ?.exchange_rate.toFixed(2)
                       .toString()
                   )}

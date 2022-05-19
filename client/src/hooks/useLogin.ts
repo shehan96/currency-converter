@@ -1,15 +1,20 @@
 import { useMutation } from '@apollo/client';
 import { LOGIN_QUERY } from '../graphql/Query';
 
+type UseLoginProps = {
+  email: string;
+  password: string;
+};
+
 /**
  * useLogin hook
  * Mutation login function using LOGIN_QUERY from graphql server
  * */
-export const useLogin = (props: any) => {
+export const useLogin = ({ email, password }: UseLoginProps) => {
   const [runLogin, { data, loading, error }] = useMutation(LOGIN_QUERY, {
     variables: {
-      email: props.email,
-      password: props.password,
+      email: email,
+      password: password,
     },
   });
 

@@ -22,8 +22,8 @@ export const Home = () => {
     setCountryText(value);
   }, []);
 
-  const handleConvertCurrency = useCallback((value: number) => {
-    setCurrencyValue(value);
+  const handleConvertCurrency = useCallback((value: string) => {
+    setCurrencyValue(+value);
   }, []);
 
   useEffect(() => {

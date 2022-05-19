@@ -3,8 +3,12 @@ import { RetweetOutlined } from '@ant-design/icons';
 import classes from './ConvertForm.module.scss';
 const { Search } = Input;
 
-export const ConvertForm = (props: any) => {
+type ConvertFormProps = {
+  onConvertCurrency: (value : string) => void;
+  selectedCountry: string;
+};
 
+export const ConvertForm = ({ onConvertCurrency, selectedCountry }: ConvertFormProps) => {
   return (
     <>
       <Search
@@ -13,8 +17,8 @@ export const ConvertForm = (props: any) => {
         enterButton='Convert'
         size='large'
         prefix={<RetweetOutlined />}
-        onSearch={props.onConvertCurrency}
-        disabled={props.selectedCountry == ''}
+        onSearch={onConvertCurrency}
+        disabled={selectedCountry == ''}
       />
     </>
   );

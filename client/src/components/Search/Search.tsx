@@ -4,7 +4,9 @@ import { useGetAllCountries } from '../../hooks/useGetAllCountries';
 import { SearchOutlined } from '@ant-design/icons';
 import classes from './Search.module.scss';
 
-export const Search = (props: any) => {
+type SearchProps = { onSelectCountry: (value : string) => void };
+
+export const Search = ({ onSelectCountry }: SearchProps) => {
   const [searchText, setSearchText] = useState('');
   const [options, setOptions] = useState<{ value: string }[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -48,7 +50,7 @@ export const Search = (props: any) => {
           allowClear={true}
           style={{ width: '100%' }}
           onChange={handleOnChange}
-          onSelect={props.onSelectCountry}
+          onSelect={onSelectCountry}
           filterOption={(inputValue, option) =>
             option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
           }
